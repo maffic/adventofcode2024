@@ -60,17 +60,15 @@ public class Task5 {
     private int reOrder(String line) {
         List<Integer> numbers = Arrays.stream(line.split(","))
                 .map(Integer::parseInt)
-                .collect(Collectors.toList());
-
-        numbers.sort((a, b) -> {
-            if (rules.containsKey(a) && rules.get(a).contains(b)) {
-                return -1;
-            } else if (rules.containsKey(b) && rules.get(b).contains(a)) {
-                return 1;
-            } else {
-                return 0;
-            }
-        });
+                .sorted((a, b) -> {
+                    if (rules.containsKey(a) && rules.get(a).contains(b)) {
+                        return -1;
+                    } else if (rules.containsKey(b) && rules.get(b).contains(a)) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }).toList();
 
         return numbers.get(numbers.size() / 2);
     }
