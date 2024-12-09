@@ -9,7 +9,8 @@ import java.util.stream.Stream;
 
 public class Task9 {
 
-    private static final String FILE_PATH = "D:\\Project\\adventofcode2024\\test\\src\\day9\\test.file";
+//    private static final String FILE_PATH = "D:\\Project\\adventofcode2024\\test\\src\\day9\\test.file";
+    private static final String FILE_PATH = "D:\\Project\\adventofcode2024\\test\\src\\day9\\input.file";
     private List<Integer> map = new ArrayList<>();
     private List<int[]> empty = new ArrayList<>();
 
@@ -29,7 +30,7 @@ public class Task9 {
                     fillData = Integer.parseInt(file.substring(0, 1));
                     emptyData = Integer.parseInt(file.substring(1, 2));
                 }
-                empty.add(new int[]{fillData, emptyData, map.size()});
+                empty.add(new int[]{fillData, emptyData, 0, map.size()});
                 for (int i = 0; i < fillData; i++) {
                     map.add(fileId);
                 }
@@ -83,7 +84,7 @@ public class Task9 {
     private void defragmentationDataPart2() {
         long crc = 0;
 
-        int right = empty.size() - 1, endPosition = map.size() - 1;
+        int right = empty.size() - 1;
 
         while (right > 0) {
 
@@ -94,9 +95,7 @@ public class Task9 {
                 left++;
             }
 
-            int newEnd = endPosition - (size + empty.get(right)[1] + empty.get(right)[2]);
-
-            if (left < empty.size() - 1) {
+            if (left < right) {
                 int[] leftEl = empty.get(left);
 
                 positionMapLeft += leftEl[0] + leftEl[2];
@@ -107,13 +106,12 @@ public class Task9 {
                 for (int i = positionMapLeft; i < positionMapLeft + size; i++) {
                     map.set(i, right);
                 }
-
-                for (int i = endPosition; i > newEnd; i--) {
+                int[] rightEl = empty.get(right);
+                int endPosition = (rightEl[3] + size);
+                for (int i = empty.get(right)[3]; i < endPosition; i++) {
                     map.set(i, -1);
                 }
             }
-
-            endPosition = newEnd;
 
             right--;
         }
