@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Task3 {
+public class Task {
 
     private static final Pattern PATTERN = Pattern.compile("mul\\((\\d+),(\\d+)\\)");
     private static final Pattern PATTERN_CONTENT = Pattern.compile("do\\(\\)(.*?)(?=don't\\(\\)|$)");
@@ -52,7 +52,7 @@ public class Task3 {
 
 
     public static void main(String[] args) {
-        var task3 = new Task3();
+        var task3 = new Task();
         System.out.println(task3.getSum());
     }
 }

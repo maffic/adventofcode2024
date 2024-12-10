@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class TTask2 {
+public class TTask {
     public static void main(String[] args) {
         List<String> reports = null;
         try (Stream<String> lines = Files.lines(Paths.get("D:\\Project\\adventofcode2024\\test\\src\\day2\\file2.task"), Charset.defaultCharset())) {

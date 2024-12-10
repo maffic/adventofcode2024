@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 import static java.util.Arrays.stream;
 
-public class Task7 {
+public class Task {
 
     private static final String FILE_PATH = "D:\\Project\\adventofcode2024\\test\\src\\day7\\input.file";
     private List<String> lines;
@@ -103,7 +103,7 @@ public class Task7 {
     }
 
     public static void main(String[] args) {
-        var task = new Task7();
+        var task = new Task();
         task.loadFile();
         task.findResult();
     }

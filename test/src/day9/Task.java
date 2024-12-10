@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Task9 {
+public class Task {
 
 //    private static final String FILE_PATH = "D:\\Project\\adventofcode2024\\test\\src\\day9\\test.file";
     private static final String FILE_PATH = "D:\\Project\\adventofcode2024\\test\\src\\day9\\input.file";
@@ -49,8 +49,8 @@ public class Task9 {
         long crc = 0;
 
         int left = 0, right = map.size() - 1;
-        boolean run = true;
-        while (left <= right || run) {
+
+        while (left <= right) {
 
             while (map.get(left) != -1) {
                 left++;
@@ -63,9 +63,8 @@ public class Task9 {
             if (left <= right) {
               map.set(left, map.get(right));
               map.set(right, -1);
-            } else {
-                run = false;
             }
+
             left++;
         }
 
@@ -106,9 +105,8 @@ public class Task9 {
                 for (int i = positionMapLeft; i < positionMapLeft + size; i++) {
                     map.set(i, right);
                 }
-                int[] rightEl = empty.get(right);
-                int endPosition = (rightEl[3] + size);
-                for (int i = empty.get(right)[3]; i < endPosition; i++) {
+
+                for (int i = empty.get(right)[3]; i < empty.get(right)[3] + size; i++) {
                     map.set(i, -1);
                 }
             }
@@ -130,7 +128,7 @@ public class Task9 {
     }
 
     public static void main(String[] args) {
-        var task = new Task9();
+        var task = new Task();
         task.loadData();
 //        task.defragmentationDataPart1();
         task.defragmentationDataPart2();

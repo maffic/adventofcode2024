@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class Task4_ {
+public class Task {
     //
     private static final String FILE_PATH = "D:\\Project\\adventofcode2024\\test\\src\\day4\\input.file";
     private static final char[] FORWARD = new char[] {'X', 'M', 'A', 'S'};
@@ -92,7 +92,7 @@ public class Task4_ {
     }
 
     public static void main(String[] args) {
-        var task4 = new Task4_();
+        var task4 = new Task();
         task4.loadFile();
         System.out.println("XMAS + MASX %d = " + task4.execute());
         System.out.println("X-MAS %d = " + task4.executeX());

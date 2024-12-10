@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
-public class Task6 {
+public class Task {
     private static final String FILE_PATH = "D:\\Project\\adventofcode2024\\test\\src\\day6\\input.file";
     private final List<char[]> matrix = new ArrayList<>();
     private static final int[][] DIRECTIONS = new int[][]{{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
@@ -111,7 +111,7 @@ public class Task6 {
     }
 
     public static void main(String[] args) {
-        var task = new Task6();
+        var task = new Task();
         task.loadFile();
         int[] start = task.findStart();
         System.out.println("Start = " + start[0] + " " + start[1]);

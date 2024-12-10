@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 import static java.lang.Math.abs;
 
-public class Task2 {
+public class Task {
 
     private int count;
 
@@ -66,7 +66,7 @@ public class Task2 {
     }
 
     public static void main(String[] args) {
-        var task2 = new Task2();
+        var task2 = new Task();
         task2.loadFile();
         System.out.println(task2.count);
     }

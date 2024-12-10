@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.partitioningBy;
 
-public class Task5 {
+public class Task {
     private static final String FILE_PATH = "D:\\Project\\adventofcode2024\\test\\src\\day5\\input.file";
     private Map<Integer, List<Integer>> rules;
     private List<String> data;
@@ -97,7 +97,7 @@ public class Task5 {
     }
 
     public static void main(String[] args) {
-        var task = new Task5();
+        var task = new Task();
         task.loadFile();
         task.execute();
     }

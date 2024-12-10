@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
-public class Task8 {
+public class Task {
 
     private static final String FILE_PATH = "D:\\Project\\adventofcode2024\\test\\src\\day8\\input.file";
     private List<String> map;
@@ -117,7 +117,7 @@ public class Task8 {
     }
 
     public static void main(String[] args) {
-        var task = new Task8();
+        var task = new Task();
         task.loadData();
         task.countAntinodes();
     }

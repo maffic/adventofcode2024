@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Task1 {
+public class Task {
 
     List<Integer> listA = new ArrayList<Integer>();
     List<Integer> listB = new ArrayList<Integer>();
@@ -44,7 +44,7 @@ public class Task1 {
     }
 
     public static void main(String[] args) {
-        var task = new Task1();
+        var task = new Task();
         task.loadFile();
         System.out.println(task.executePart1());
         System.out.println(task.executePart2());
