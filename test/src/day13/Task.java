@@ -127,7 +127,7 @@ public class Task {
         long sumCoin = 0;
 
         for (ClawMashine clawMashine : data) {
-            int coin = 0;
+            long coin = 0;
             clawMashine.resultY += 10000000000000L;
             clawMashine.resultX += 10000000000000L;
             long bUp = clawMashine.resultY * clawMashine.buttomA.x - clawMashine.resultX * clawMashine.buttomA.y;
@@ -140,7 +140,7 @@ public class Task {
                 if (aUp % clawMashine.buttomA.x == 0) {
                     long a = aUp / clawMashine.buttomA.x;
 
-                    sumCoin += (a * 3 + b);
+                    coin = (a * 3 + b);
                 }
             }
 
