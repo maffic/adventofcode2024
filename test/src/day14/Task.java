@@ -46,26 +46,6 @@ public class Task {
         }
     }
 
-    public static int[] calculatePosition(int x0, int y0, int n, int width, int height, int deltaXPerStep, int deltaYPerStep) {
-        // Смещение через N итераций
-        int deltaX = deltaXPerStep * n;
-        int deltaY = deltaYPerStep * n;
-
-        // Новые координаты с учетом циклического прохождения
-        int x = (x0 + deltaX) % width;
-        int y = (y0 + deltaY) % height;
-
-        // Обработка отрицательных индексов
-        if (x < 0) {
-            x += width;
-        }
-        if (y < 0) {
-            y += height;
-        }
-
-        return new int[]{x, y};
-    }
-
     private void part1() {
         int width = 101;
         int height = 103;
