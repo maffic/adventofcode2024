@@ -72,7 +72,7 @@ public class Task {
             if (map.get(i) == -1) {
                 break;
             }
-            crc += i * map.get(i);
+            crc += (long) i * map.get(i);
         }
 
         map.forEach(el -> System.out.print(el + " "));
@@ -119,7 +119,7 @@ public class Task {
             if (map.get(i) == -1) {
                 continue;
             }
-            crc += i * map.get(i);
+            crc += (long) i * map.get(i);
         }
 
         map.forEach(el -> System.out.print(el + " "));

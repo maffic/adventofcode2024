@@ -22,7 +22,7 @@ public class Task {
             for (int i = 0; i < lines.size(); i++) {
                 data[i] = lines.get(i).toCharArray();
             }
-        } catch (IOException e) {
+        } catch (IOException _) {
 
         }
     }

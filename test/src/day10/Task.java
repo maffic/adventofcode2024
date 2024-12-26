@@ -31,8 +31,8 @@ public class Task {
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
                 if (map[i][j] == 0) {
-                    boolean visited[][] = new boolean[map.length][map[i].length];
-                    result.add(dfs(-1, i, j, new ArrayList<String>(), visited));
+                    boolean[][] visited = new boolean[map.length][map[i].length];
+                    result.add(dfs(-1, i, j, new ArrayList<>(), visited));
                 }
             }
         }
@@ -46,7 +46,7 @@ public class Task {
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
                 if (map[i][j] == 0) {
-                    result.add(dfsPart2(-1, i, j, new ArrayList<String>()));
+                    result.add(dfsPart2(-1, i, j, new ArrayList<>()));
                 }
             }
         }
@@ -71,14 +71,14 @@ public class Task {
             visited[i][j] = true;
             path.add("(" + i + ", " + j + ") " + map[i][j]);
             System.out.println(path);
-            path.remove(path.size() - 1);
+            path.removeLast();
             return 1;
         }
 
         path.add("(" + i + ", " + j + ") " + map[i][j]);
 
         int result = dfs(map[i][j], i + 1, j, path, visited) + dfs(map[i][j], i, j + 1, path, visited) + dfs(map[i][j], i - 1, j, path, visited) + dfs(map[i][j], i, j - 1, path, visited);
-        path.remove(path.size() - 1);
+        path.removeLast();
 
         return result;
     }
@@ -95,7 +95,7 @@ public class Task {
         if (map[i][j] == 9) {
             path.add("(" + i + ", " + j + ") " + map[i][j]);
             System.out.println(path);
-            path.remove(path.size() - 1);
+            path.removeLast();
             return 1;
         }
 

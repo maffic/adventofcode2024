@@ -22,7 +22,7 @@ public class Task {
                 size++;
             }
 
-            map = new char[linesList.get(0).length()][size];
+            map = new char[linesList.getFirst().length()][size];
             for (int i = 0; i < size; i++) {
                 String line = linesList.get(i);
                 for (int j = 0; j < line.length(); j++) {
@@ -175,7 +175,8 @@ public class Task {
 
     private boolean moveBox2(char[][] newMap, int x, int y, Direction direction, char boxStart) {
         Point next = new Point(x, y);
-        if (direction.equals(Direction.UP) || direction.equals(Direction.DOWN)) {
+        boolean b = direction.equals(Direction.UP) || direction.equals(Direction.DOWN);
+        if (b) {
             direction.move(next);
         } else {
             direction.moveBox(next);
@@ -192,7 +193,7 @@ public class Task {
         }
 
         if (result) {
-            if (direction.equals(Direction.UP) || direction.equals(Direction.DOWN)) {
+            if (b) {
                 newMap[x][y] = '.';
             } else {
                 newMap[x][y] = '.';
